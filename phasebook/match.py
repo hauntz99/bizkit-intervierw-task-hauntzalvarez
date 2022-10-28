@@ -26,10 +26,7 @@ def is_match(fave_numbers_1, fave_numbers_2):
     counter = 0
 
     for number in fave_numbers_2:
-        #print(number)
         for num in range(len(fave_numbers_1)-counter):
-            #print(num)
-            #print(counter)
             if number > fave_numbers_1[counter]:
                 counter = counter + 1
                 continue
