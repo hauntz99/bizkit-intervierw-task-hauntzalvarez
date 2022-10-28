@@ -20,8 +20,29 @@ def match(match_id):
 
 
 def is_match(fave_numbers_1, fave_numbers_2):
+    fave_numbers_1.sort()
+    fave_numbers_2.sort()
+
+    counter = 0
+
     for number in fave_numbers_2:
-        if number not in fave_numbers_1:
-            return False
+        #print(number)
+        for num in range(len(fave_numbers_1)-counter):
+            #print(num)
+            #print(counter)
+            if number > fave_numbers_1[counter]:
+                counter = counter + 1
+                continue
+            if number == fave_numbers_1[counter]:
+                counter = counter + 1
+                break
+            if number < fave_numbers_1[counter]:
+                return False
 
     return True
+
+    # for number in fave_numbers_2:
+    #     if number not in fave_numbers_1:
+    #         return False
+
+    #return True
